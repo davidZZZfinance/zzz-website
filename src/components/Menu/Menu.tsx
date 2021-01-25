@@ -6,10 +6,9 @@ import { LinkContainer, MenuAbsoluteWrapper, MenuContainer } from "./Menu.styles
 
 const views = [
   { name: "Home", url: "/", icon: <HomeSVG /> },
-  { name: "Learn", url: "/learn", icon: <LearnSVG /> },
-  { name: "Governance", url: "/governance", icon: <GovernanceSVG /> },
   { name: "Pools", url: "/pools", icon: <PoolSVG /> },
   { name: "Vault", url: "/vault", icon: <VaultSVG /> },
+  { name: "Governance", url: "/governance", icon: <GovernanceSVG /> },
 ];
 
 function Menu() {
