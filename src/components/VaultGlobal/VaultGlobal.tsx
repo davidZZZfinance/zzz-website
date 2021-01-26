@@ -18,7 +18,7 @@ const ReadmeStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     backgroundColor: "rgba(0,0,0,0.9)",
-    width: "75%",
+    width: "100%",
     height: "70%",
     padding: "12px 40px",
   },
@@ -36,12 +36,6 @@ function VaultGlobal() {
           ZZZ VAULTS
         </a>
       </h1>
-      <div className="help-button" onClick={() => setShowReadme(true)}>
-        README{" "}
-        <span role="img" aria-label="help">
-          📝
-        </span>
-      </div>
       <div className="epoch">
         CURRENT EPOCH: {epoch} - next in {epochStartBlock + 200000 - currentBlock} blocks
       </div>

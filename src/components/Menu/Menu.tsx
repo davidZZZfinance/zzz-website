@@ -1,7 +1,7 @@
 import ZzzIcon from "assets/zzz_menu_icon.png";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { GovernanceSVG, HomeSVG, LearnSVG, PoolSVG, VaultSVG } from "svg/MenuIcons";
+import { GovernanceSVG, HomeSVG, PoolSVG, VaultSVG } from "svg/MenuIcons";
 import { LinkContainer, MenuAbsoluteWrapper, MenuContainer } from "./Menu.styles";
 
 const views = [

@@ -11,7 +11,7 @@ type ContainerProps = {
 
 export const FlexContainer = styled.div<ContainerProps>`
   display: flex;
-  background: ${(props) => (props.view === "Pools" ? "linear-gradient(90deg, #cbcde5 12%, #f8f9f9 50%)" : "#f8f9f9")};
+  background: ${(props) => ("linear-gradient(90deg, #cbcde5 12%, #f8f9f9 50%)")};
   flex-direction: ${(props) => (props.type === "horizontal" ? "row" : "column")};
   min-height: 100vh;
   @media (max-width: 768px) {
@@ -32,7 +32,7 @@ export const MainContent = styled.div<ContainerProps>`
 
 export const ExtraContent = styled.div<ContainerProps>`
   background-color: ${(props) => (props.color ? props.color : "#021b31")};
-  flex: ${(props) => (props.view === "Pools" ? "0.4" : "1")};
+  flex: 0.4;
   background-image: ${(props) => props.view === "Pools" && `url(${url})`};
   background-repeat: no-repeat;
   :before {
