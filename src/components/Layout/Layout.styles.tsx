@@ -38,13 +38,21 @@ export const ExtraContent = styled.div<ContainerProps>`
   :before {
     height: 10px;
     background-size: 20px 20px;
-    background-image: radial-gradient(circle at 10px -5px, transparent 12px, white 13px);
+    background-image: radial-gradient(
+      circle at 10px -5px,
+      transparent 12px,
+      white 13px
+    );
   }
 
   :after {
     height: 15px;
     background-size: 40px 20px;
-    background-image: radial-gradient(circle at 10px 15px, white 12px, transparent 13px);
+    background-image: radial-gradient(
+      circle at 10px 15px,
+      white 12px,
+      transparent 13px
+    );
   }
 
   @media (max-width: 1024px) {
@@ -57,13 +65,21 @@ export const ExtraLearnContent = styled.div<ContainerProps>`
   :before {
     height: 10px;
     background-size: 20px 20px;
-    background-image: radial-gradient(circle at 10px -5px, transparent 12px, white 13px);
+    background-image: radial-gradient(
+      circle at 10px -5px,
+      transparent 12px,
+      white 13px
+    );
   }
 
   :after {
     height: 15px;
     background-size: 40px 20px;
-    background-image: radial-gradient(circle at 10px 15px, white 12px, transparent 13px);
+    background-image: radial-gradient(
+      circle at 10px 15px,
+      white 12px,
+      transparent 13px
+    );
   }
 `;
 
@@ -75,13 +91,21 @@ export const ExtraGovernanceContent = styled.div<ContainerProps>`
   :before {
     height: 10px;
     background-size: 20px 20px;
-    background-image: radial-gradient(circle at 10px -5px, transparent 12px, white 13px);
+    background-image: radial-gradient(
+      circle at 10px -5px,
+      transparent 12px,
+      white 13px
+    );
   }
 
   :after {
     height: 15px;
     background-size: 40px 20px;
-    background-image: radial-gradient(circle at 10px 15px, white 12px, transparent 13px);
+    background-image: radial-gradient(
+      circle at 10px 15px,
+      white 12px,
+      transparent 13px
+    );
   }
 
   @media (max-width: 1024px) {
