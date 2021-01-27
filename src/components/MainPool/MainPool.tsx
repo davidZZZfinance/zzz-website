@@ -40,19 +40,21 @@ function MainPool({ pool, currentBlock }: Props) {
   const signer = useMemo(() => library.getSigner(), [library]);
   const basePoolData = PoolStore.basePoolData.get(pool.id);
   const userPoolData = PoolStore.userPoolData.get(pool.id);
-  const validationResults = useMemo(() => Validation(pool, userPoolData, basePoolData, inputValue), [
-    pool,
-    basePoolData,
-    userPoolData,
-    inputValue,
-  ]);
+  const validationResults = useMemo(
+    () => Validation(pool, userPoolData, basePoolData, inputValue),
+    [pool, basePoolData, userPoolData, inputValue]
+  );
 
-  const tooltips = useMemo(() => getToolTips(userPoolData, basePoolData, validationResults?.poolClosed, inputValue), [
-    userPoolData,
-    basePoolData,
-    validationResults,
-    inputValue,
-  ]);
+  const tooltips = useMemo(
+    () =>
+      getToolTips(
+        userPoolData,
+        basePoolData,
+        validationResults?.poolClosed,
+        inputValue
+      ),
+    [userPoolData, basePoolData, validationResults, inputValue]
+  );
   // Get the pool data
   if (!account) return null;
 
@@ -61,7 +63,10 @@ function MainPool({ pool, currentBlock }: Props) {
   // Just display spinner if we do not have any data
   if (!basePoolData || !userPoolData) {
     // Fetch retired pools data here. We don't want to spam all of them on the app launch.
-    if (pool.poolStatus === PoolStatus.Retired || pool.poolStatus === PoolStatus.Closed) {
+    if (
+      pool.poolStatus === PoolStatus.Retired ||
+      pool.poolStatus === PoolStatus.Closed
+    ) {
       PoolStore.getBasePoolData(pool, library);
     }
     return <Spinner type="ThreeDots" />;
@@ -123,7 +128,12 @@ function MainPool({ pool, currentBlock }: Props) {
         )}
         <PoolData>
           <PoolInfoSection pool={pool} userTokenAmount={tokenAmount} />
-          <PoolRoiSection weeklyROI={weeklyROI} weeklyUSD={weeklyUSD} yearlyROI={yearlyROI} displayYields={displayYields} />
+          <PoolRoiSection
+            weeklyROI={weeklyROI}
+            weeklyUSD={weeklyUSD}
+            yearlyROI={yearlyROI}
+            displayYields={displayYields}
+          />
           <PoolInputSection
             canMaxWithdraw={canMaxWithdraw}
             canStake={canStake}

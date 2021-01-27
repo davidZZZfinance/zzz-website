@@ -13,7 +13,16 @@ import ListedTokens from "./ListedTokens";
 import { useInactiveListener, useEagerConnect } from "hooks/web3";
 import bed from "assets/swimming_pool.svg";
 import unismall from "assets/uniswap_100.webp";
-import { BoxContainer, PoolsContainer, Box, ExtraContainer, MarginForMenu, BuyButtons, BuyButtonNAP, BuyButtonZZZ } from "./Pools.styles";
+import {
+  BoxContainer,
+  PoolsContainer,
+  Box,
+  ExtraContainer,
+  MarginForMenu,
+  BuyButtons,
+  BuyButtonNAP,
+  BuyButtonZZZ,
+} from "./Pools.styles";
 import ExtraContent from "./ExtraContent";
 
 function Pools() {
@@ -25,8 +34,18 @@ function Pools() {
   useEffect(() => {
     (async () => {
       if (account) {
-        const NAP = await checkNormalAllowance(tokens.NAPV2.address, tokens.NAP, account, library);
-        const ZZZ = await checkNormalAllowance(tokens.ZZZV2.address, tokens.ZZZ, account, library);
+        const NAP = await checkNormalAllowance(
+          tokens.NAPV2.address,
+          tokens.NAP,
+          account,
+          library
+        );
+        const ZZZ = await checkNormalAllowance(
+          tokens.ZZZV2.address,
+          tokens.ZZZ,
+          account,
+          library
+        );
         setHasAllowanceNAPV2(NAP);
         setHasAllowanceZZZV2(ZZZ);
       }
@@ -145,7 +164,12 @@ function Pools() {
                 <div className="network-info">
                   <Box color="white">
                     <h4>Your total stake</h4>
-                    <h3 className="tvl-usd">${isFinite(totalStakedUSD.usd) ? totalStakedUSD.usd.toFixed(2) : "0"}</h3>
+                    <h3 className="tvl-usd">
+                      $
+                      {isFinite(totalStakedUSD.usd)
+                        ? totalStakedUSD.usd.toFixed(2)
+                        : "0"}
+                    </h3>
                   </Box>
                 </div>
               </ExtraContainer>

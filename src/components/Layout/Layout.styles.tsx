@@ -11,8 +11,9 @@ type ContainerProps = {
 
 export const FlexContainer = styled.div<ContainerProps>`
   display: flex;
-  background: ${(props) => ("linear-gradient(90deg, #cbcde5 12%, #f8f9f9 50%)")};
-  flex-direction: ${(props) => (props.type === "horizontal" ? "row" : "column")};
+  background: ${(props) => "linear-gradient(90deg, #cbcde5 12%, #f8f9f9 50%)"};
+  flex-direction: ${(props) =>
+    props.type === "horizontal" ? "row" : "column"};
   min-height: 100vh;
   @media (max-width: 768px) {
     flex-direction: ${(props) => props.view === "Pools" && "column-reverse"};

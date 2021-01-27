@@ -350,8 +350,6 @@ export const Box = styled.div`
     justify-content: space-around;
     font-size: 10px;
   }
-
-  
 `;
 
 export const TransparentBox = styled.div`
@@ -384,8 +382,6 @@ export const TransparentBox = styled.div`
     justify-content: space-around;
     font-size: 10px;
   }
-
-  
 `;
 
 export const FuckThisBox = styled.div`

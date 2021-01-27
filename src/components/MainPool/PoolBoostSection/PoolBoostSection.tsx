@@ -15,21 +15,45 @@ type Props = {
   boostCosts?: number[];
   updater: Function;
   account: string;
-  tooltips: (key: string, boostCost?: number, boostAmount?: string, effectiveStake?: boolean, currentBoostLevel?: number) => string | undefined;
+  tooltips: (
+    key: string,
+    boostCost?: number,
+    boostAmount?: string,
+    effectiveStake?: boolean,
+    currentBoostLevel?: number
+  ) => string | undefined;
   signer: any;
   effectiveStake?: boolean;
 };
-function PoolBoostSection({ pool, hasBoostAllowance, boostTokenAmount, boostCosts, boostLevel = 0, updater, account, tooltips, signer, effectiveStake }: Props) {
+function PoolBoostSection({
+  pool,
+  hasBoostAllowance,
+  boostTokenAmount,
+  boostCosts,
+  boostLevel = 0,
+  updater,
+  account,
+  tooltips,
+  signer,
+  effectiveStake,
+}: Props) {
   const { boostToken, poolStatus } = pool;
 
-  const isBoostable = boostToken && (poolStatus === PoolStatus.Ongoing || poolStatus === PoolStatus.Incoming);
+  const isBoostable =
+    boostToken &&
+    (poolStatus === PoolStatus.Ongoing || poolStatus === PoolStatus.Incoming);
 
   if (!isBoostable) return null;
 
   if (!hasBoostAllowance) {
     return (
       <Footer>
-        <div className="boost-approve" onClick={() => updater(() => getBoostAllowance(account, pool, signer))}>
+        <div
+          className="boost-approve"
+          onClick={() =>
+            updater(() => getBoostAllowance(account, pool, signer))
+          }
+        >
           Approve {boostToken!.name} before you can boost
         </div>
       </Footer>
@@ -45,8 +69,19 @@ function PoolBoostSection({ pool, hasBoostAllowance, boostTokenAmount, boostCost
         return (
           <div
             key={`boost-button-${pool.name}-${level}`}
-            className={classNames("boost-button", tooPoor && "too-poor", isActive && "disabled", level <= boostLevel && "active")}
-            data-tip={tooltips("boost", boostCost, percentage, effectiveStake, level)}
+            className={classNames(
+              "boost-button",
+              tooPoor && "too-poor",
+              isActive && "disabled",
+              level <= boostLevel && "active"
+            )}
+            data-tip={tooltips(
+              "boost",
+              boostCost,
+              percentage,
+              effectiveStake,
+              level
+            )}
             onClick={() => updater(() => boost(level, pool, signer))}
           >
             <Button>

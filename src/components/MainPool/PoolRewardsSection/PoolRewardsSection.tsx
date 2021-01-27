@@ -17,7 +17,15 @@ type Props = {
   canClaim: boolean;
   canExit: boolean;
 };
-function PoolRewardsSection({ rewards, pool, signer, updater, tooltips, canClaim, canExit }: Props) {
+function PoolRewardsSection({
+  rewards,
+  pool,
+  signer,
+  updater,
+  tooltips,
+  canClaim,
+  canExit,
+}: Props) {
   const { reward } = pool;
 
   return (
@@ -30,7 +38,9 @@ function PoolRewardsSection({ rewards, pool, signer, updater, tooltips, canClaim
         {rewards?.tokens.toFixed(2)} {reward.name}
         {pool.isMigrationPool && "V2"}
       </div>
-      <div className="rewards-amount-usd">(${rewards?.USDRewards?.toFixed(2)})</div>
+      <div className="rewards-amount-usd">
+        (${rewards?.USDRewards?.toFixed(2)})
+      </div>
       <div className="button-container">
         <Button
           color="#58D68D"
